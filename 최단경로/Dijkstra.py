@@ -1,5 +1,5 @@
 """
-* Title: Dijkstra (다익스트라)
+* Title: Dijkstra
 
 * Input
 6 11

@@ -1,5 +1,5 @@
 """
-* Title: 플로이드워셜 (Floyd Warshall)
+* Title: Floyd Warshall
 
 * Input
 7
