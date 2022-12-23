@@ -1,5 +1,5 @@
 """
-* Title: Floyd Warshall 미래 도시
+* Title: 플로이드워셜 - 미래 도시
 방문 판매원 A는 많은 회사가 모여 있는 공중 미래 도시에 있다.
 공중 미래 도시에는 1번부터 N번까지의 회사가 있는데 특정 회사끼리는 서로 도로를 통해 연결되어 있다.
 방문 판매원 A는 현재 1번 회사에 위치해 있으며, X번 회사에 방문해 물건을 판매하고자 한다.
@@ -70,7 +70,6 @@ for k in range(1, n + 1):
     for a in range(1, n + 1):
         for b in range(1, n + 1):
             graph[a][b] = min(graph[a][b], graph[a][k] + graph[k][b])
-
 # 수행된 결과를 출력
 distance = graph[1][k] + graph[k][x]
 

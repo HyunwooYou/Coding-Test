@@ -1,5 +1,5 @@
 """
-* Title: Dijkstra
+* Title: 다익스트라
 
 * Input
 6 11
@@ -44,8 +44,6 @@ for _ in range(m):
     a, b, c = map(int, input().split())
     # a번 노드에서 b번 노드로 가는 비용이 c라는 의미
     graph[a].append((b, c))
-
-
 def dijkstra(start):
     q = []
     # 시작 노드로 가기 위한 최단 경로는 0으로 설정하여, 큐에 삽입
@@ -66,10 +64,8 @@ def dijkstra(start):
                 distance[i[0]] = cost
                 heapq.heappush(q, (cost, i[0]))
 
-
 # 다익스트라 알고리즘을 수행
 dijkstra(start)
-
 
 # 모든 노드로 가기 위한 최단 거리를 출력
 for i in range(1, n + 1):

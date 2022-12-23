@@ -1,5 +1,5 @@
 """
-* Title: Dijkstra 전보
+* Title: 다익스트라 - 전보
 어떤 나라에는 N개의 도시가 있다. 그리고 각 도시는 보내고자 하는 메세지가 있는 경우,
 다른 도시로 전보를 보내서 다른 도시로 해당 메세지를 전송할 수 있다.
 하지만 X라는 도시에서 Y라는 도시로 전보를 보내고자 한다면, 도시 X에서 Y로 향하는 통로가 설치되어 있어야 한다.
@@ -43,8 +43,6 @@ for _ in range(m):
     x, y, z = map(int, input().split())
     # x번 노드에서 y번 노드로 가는 비용이 z라는 의미
     graph[x].append((y, z))
-
-
 def dijkstra(start):
     q = []
     # 시작 노드로 가기 위한 최단 경로는 0으로 설정하여, 큐에 삽입
@@ -63,7 +61,6 @@ def dijkstra(start):
             if cost < distance[i[0]]:
                 distance[i[0]] = cost
                 heapq.heappush(q, (cost, i[0]))
-
 
 # 다익스트라 알고리즘을 수행
 dijkstra(start)
