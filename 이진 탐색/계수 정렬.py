@@ -10,7 +10,7 @@ refer) 이진 탐색 - 부품 찾기
 3
 5 7 9
 
-* Ouput
+* Output
 no yes yes
 """
 # N(가게의 부품 개수)을 입력받기

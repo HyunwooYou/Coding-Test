@@ -5,7 +5,7 @@
 5 Zol
 a b Zol c d
 
-* Ouput
+* Output
 3
 """
 # 순차 탐색 소스코드 구현
