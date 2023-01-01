@@ -22,7 +22,7 @@
 1 3 2
 
 * Output
-- 첫째 줄에 도시 C에서 보낸 메세지를 받는 도시의 총 개수와 총 걸리는 시간을 공백으로 구분하여 출력한다.
+- 첫째 줄에 도시 C에서 보낸 메세지를 받는 도시의 총 개수와 총 거리는 시간을 공백으로 구분하여 출력한다.
 2 4
 """
 import heapq
@@ -43,6 +43,7 @@ for _ in range(m):
     x, y, z = map(int, input().split())
     # x번 노드에서 y번 노드로 가는 비용이 z라는 의미
     graph[x].append((y, z))
+
 def dijkstra(start):
     q = []
     # 시작 노드로 가기 위한 최단 경로를 0으로 설정하여, 큐에 삽입
@@ -54,7 +55,7 @@ def dijkstra(start):
         dist, now = heapq.heappop(q)
         if distance[now] < dist:
             continue
-        # 현재 노드와 연결된 다른 인접한 노드들을 확인
+        # 현재 노드와 연결된 다른 인접한 노드들을 확ㅇ니
         for i in graph[now]:
             cost = dist + i[1]
             # 현재 노드를 거쳐서, 다른 노드로 이동하는 거리가 더 짧은 경우
