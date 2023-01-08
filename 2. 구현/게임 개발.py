@@ -44,7 +44,7 @@ n, m = map(int, input().split())
 
 # 방문한 위치를 저장하기 위해 맵을 생성하여 0으로 초기화
 d = [[0] * m for _ in range(n)]
-# 현재 캐릭터의 X 좌표, Y 좌표, 방향을 입력받기
+# 현재 캐릭터의 X 좌표, Y 좌표 방향을 입력받기
 x, y, direction = map(int, input().split())
 d[x][y] = 1  # 현재 좌표 방문 처리
 
@@ -72,6 +72,7 @@ while True:
     turn_left()
     nx = x + dx[direction]
     ny = y + dy[direction]
+
     # 회전한 이후 정면에 가보지 않은 칸이 존재하는 경우 이동
     if d[nx][ny] == 0 and array[nx][ny] == 0:
         d[nx][ny] = 1
