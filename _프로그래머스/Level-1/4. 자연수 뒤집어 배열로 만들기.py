@@ -3,8 +3,8 @@
 https://school.programmers.co.kr/learn/courses/30/lessons/12932
 """
 def solution(n):
-    arr = list(str(n))
-    arr.reverse()
-    answer = list(map(int, arr))
+    array = list(str(n))
+    array.reverse()
+    answer = list(map(int, array))
 
     return answer
