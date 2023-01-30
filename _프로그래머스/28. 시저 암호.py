@@ -14,7 +14,7 @@ def solution(s, n):
             new_ls.append(' ')
         # lower char
         elif ord('a') <= ord_char <= ord('z'):
-            if ord('a') <- moved <= ord('z'):
+            if ord('a') <= moved <= ord('z'):
                 new_ls.append(chr(moved))
             else:
                 new_ls.append(chr(moved - 26))
