@@ -14,4 +14,4 @@ def greatest_common_divisor(x, y):
     return x
 
 def least_common_multiple(x, y):
-    return (x * y) // greatest_commondivisor(x, y)
+    return (x * y) // greatest_common_divisor(x, y)
