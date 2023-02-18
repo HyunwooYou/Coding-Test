@@ -2,6 +2,8 @@
 * Title: 신고 결과 받기
 https://school.programmers.co.kr/learn/courses/30/lessons/92334
 """
+from collections import defaultdict
+
 def solution(id_list, report, k):
     answer = []
     # 중복 신고 제거
@@ -13,7 +15,7 @@ def solution(id_list, report, k):
 
     for r in report:
         # report의 첫번째 값은 신고자 id, 두번째 값은 신고당한 id
-        reporter, assignee = r.split()
+        reporter, assignee = r.split()  
         # 신고자가 신고한 id 추가
         user[reporter].add(assignee)
         # 신고당한 id의 신고 횟수 추가
