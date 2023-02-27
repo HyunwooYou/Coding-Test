@@ -31,3 +31,11 @@ def solution(priorities, location):
             break
 
     return ans2
+
+# priorities = [2, 1, 3, 2]
+# location = 2
+priorities = [1, 1, 9, 1, 1, 1]
+location = 0
+
+print(solution(priorities, location))
+
