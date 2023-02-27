@@ -6,3 +6,10 @@ def solution(ls):
     filtered = list(filter(lambda x: x[1] == target, ls))
     sorted_ls = sorted(ls, key=lambda x: x[0], reverse=True)
 
+    num_ls = [1, 2, 3, 4, 5]
+    # [1, 2, 3, 4]
+    num_ls = num_ls[:-1]
+    # [2, 3, 4]
+    num_ls = num_ls[1:]
+
+
