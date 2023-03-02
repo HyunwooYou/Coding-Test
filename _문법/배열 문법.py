@@ -5,6 +5,7 @@ def solution(ls):
     target = 1
     filtered = list(filter(lambda x: x[1] == target, ls))
     sorted_ls = sorted(ls, key=lambda x: x[0], reverse=True)
+    mapped = list(map(lambda x: x[0], ls))
 
     num_ls = [1, 2, 3, 4, 5]
     # [1, 2, 3, 4]
