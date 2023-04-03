@@ -4,12 +4,6 @@ https://school.programmers.co.kr/learn/courses/30/lessons/92341
 """
 import math
 from collections import defaultdict
-# math.ceil(12.34) => 13
-
-def print_records(ls):
-    for i in range(len(ls)):
-        print(ls[i])
-    print()
 
 def get_int_time(str_time):
     splitted = str_time.split(':')
@@ -19,31 +13,54 @@ def get_int_time(str_time):
     return hours + minutes
 
 def solution(fees, records):
-    answer = []
-    base_time = fees[0]
-    base_fee = fees[1]
-    unit_time = fees[2]
-    unit_fee = fees[3]
-    dict = defaultdict(set)
-
-
-    print_records(records)
+    dict = defaultdict(list)
+    sum_dict = defaultdict(list)
 
     for i in range(len(records)):
         cur = records[i]
         splitted = cur.split(' ')
         time = get_int_time(splitted[0])
-        key = splitted[1]
+        key = int(splitted[1])
         type = splitted[2]
-        dict[key].add((time, type))
+        dict[key].append((time, type))
 
     for i in dict.items():
+        key = i[0]
         cur = list(i[1])
         cur.sort()
+        dict[key] = cur
 
-        print(cur)
+        if cur[-1][1] == 'IN':
+            dict[key].append((24 * 60 - 1, 'OUT'))
 
-    return answer
+    for i in dict.items():
+        key = i[0]
+        cur = i[1]
+        sum = 0
+        sum_2 = 0
+
+        for j in range(len(cur) // 2):
+            in_val = cur[j * 2][0]
+            out_val = cur[j * 2 + 1][0]
+            sum += out_val - in_val
+
+        base_time = fees[0]
+        base_fee = fees[1]
+        unit_time = fees[2]
+        unit_fee = fees[3]
+
+        if sum <= base_time:
+            sum_2 = base_fee
+        else:
+            sum_2 = base_fee
+            sum_2 += math.ceil((sum - base_time) / unit_time) * unit_fee
+
+        sum_dict[key].append(sum_2)
+
+    sorted_ls = sorted(sum_dict.items(), key=lambda x: x[0])
+    mapped_ls = list(map(lambda x: x[1][0], sorted_ls))
+
+    return mapped_ls
 
 fees = [180, 5000, 10, 600]
 records = [
@@ -63,5 +80,5 @@ records = [
 
 # fees = [120, 0, 60, 591]
 # records = ["16:00 3961 IN","16:00 0202 IN","18:00 3961 OUT","18:00 0202 OUT","23:58 3961 IN"]
-
-solution(fees, records)
+print()
+print(solution(fees, records))
