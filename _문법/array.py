@@ -12,5 +12,7 @@ def solution(ls):
     num_ls = num_ls[:-1]
     # [2, 3, 4]
     num_ls = num_ls[1:]
+    # 5
+    last = num_ls[-1]
 
 
