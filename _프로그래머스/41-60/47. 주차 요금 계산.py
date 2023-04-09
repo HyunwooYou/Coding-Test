@@ -14,7 +14,7 @@ def get_int_time(str_time):
 
 def solution(fees, records):
     dict = defaultdict(list)
-    sum_dict = defaultdict(list)
+    dict_sum = defaultdict(list)
 
     for i in range(len(records)):
         cur = records[i]
@@ -55,9 +55,9 @@ def solution(fees, records):
             sum_2 = base_fee
             sum_2 += math.ceil((sum - base_time) / unit_time) * unit_fee
 
-        sum_dict[key].append(sum_2)
+        dict_sum[key].append(sum_2)
 
-    sorted_ls = sorted(sum_dict.items(), key=lambda x: x[0])
+    sorted_ls = sorted(dict_sum.items(), key=lambda x: x[0])
     mapped_ls = list(map(lambda x: x[1][0], sorted_ls))
 
     return mapped_ls
