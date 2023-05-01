@@ -12,6 +12,7 @@ def bfs(graph, cur_node, visited):
     queue = deque([cur_node])
     # 현재 노드를 방문 처리
     visited[cur_node] = True
+
     while queue:
         # 큐에서 하나의 원소를 뽑아 출력
         popped_node = queue.popleft()
