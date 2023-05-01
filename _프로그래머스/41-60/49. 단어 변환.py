@@ -6,41 +6,35 @@ import heapq
 from collections import defaultdict, deque
 
 def dijkstra(dict_graph, start):
+    INF = int(1e9)
     queue = []
     heapq.heappush(queue, (start, 0))
     dict_distance = defaultdict(int)
+
+    for i in dict_graph.items():
+        key = i[0]
+        dict_distance[key] = INF
+
     dict_distance[start] = 0
 
     while queue:
-        dist, popped_node = heapq.heappop(queue)
-        if dict_distance[popped_node] < dist:
+        cur_node, cur_dist = heapq.heappop(queue)
+
+        if dict_distance[cur_node] < cur_dist:
             continue
-        adjacent_list = dict_graph[popped_node]
 
-        for i in range(len(adjacent_list)):
-            adjacent_node = adjacent_list[i]
-            cost = dist + 1
-            if cost < dict_distance[adjacent_node]:
-                dict_distance[adjacent_node] = cost
-                heapq.heappush(queue, (adjacent_node, cost))
+        adj_list = dict_graph[cur_node]
 
-    print(dict_distance)
+        for i in range(len(adj_list)):
+            adj_tuple = adj_list[i]
+            adj_node, adj_cost = adj_tuple
+            new_cost = cur_dist + adj_cost
 
+            if new_cost < dict_distance[adj_node]:
+                dict_distance[adj_node] = new_cost
+                heapq.heappush(queue, (adj_node, new_cost))
 
-def bfs_shortest_path(dict_graph, cur_node, dict_visited):
-    queue = deque([cur_node])
-    dict_visited[cur_node] = True
-
-    while queue:
-        popped_node = queue.popleft()
-        adjacent_list = dict_graph[popped_node]
-        # print(popped_node)
-
-        for i in range(len(adjacent_list)):
-            adjacent_node = adjacent_list[i]
-            if not dict_visited[adjacent_node]:
-                queue.append(adjacent_node)
-                dict_visited[adjacent_node] = True
+    return dict_distance
 
 def is_adjacent_node(cur_node, compare_node):
     count = 0
@@ -69,10 +63,11 @@ def solution(begin, target, words):
                 continue
             compare_node = words[j]
             if is_adjacent_node(cur_node, compare_node):
-                dict_graph[cur_node].append(compare_node)
+                cost = 1
+                dict_graph[cur_node].append((compare_node, cost))
 
-    bfs_shortest_path(dict_graph, begin, dict_visited)
-    dijkstra(dict_graph, begin)
+    distance_infos = dijkstra(dict_graph, begin)
+    answer = distance_infos[target]
 
     return answer
 

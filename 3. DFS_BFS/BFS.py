@@ -15,13 +15,13 @@ def bfs(graph, cur_node, visited):
 
     while queue:
         # 큐에서 하나의 원소를 뽑아 출력
-        popped_node = queue.popleft()
-        print(popped_node, end=' ')
+        cur_node = queue.popleft()
+        print(cur_node, end=' ')
         # 해당 원소와 연결된, 아직 방문하지 않은 원소들을 큐에 삽입
-        for adjacent_node in graph[popped_node]:
-            if not visited[adjacent_node]:
-                queue.append(adjacent_node)
-                visited[adjacent_node] = True
+        for adj_node in graph[cur_node]:
+            if not visited[adj_node]:
+                queue.append(adj_node)
+                visited[adj_node] = True
 
 # 각 노드가 연결된 정보를 리스트 자료형으로 표현(2차원 리스트)
 graph = [
