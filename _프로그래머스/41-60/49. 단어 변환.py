@@ -1,4 +1,7 @@
 """
+@dijkstra:strNode
+@다익스트라:문자노드
+
 * Title: 단어 변환
 https://school.programmers.co.kr/learn/courses/30/lessons/43163
 """

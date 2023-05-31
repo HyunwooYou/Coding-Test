@@ -1,4 +1,7 @@
 """
+@dijkstra:numNode
+@다익스트라:숫자노드
+
 * Title: 다익스트라
 
 * Input
