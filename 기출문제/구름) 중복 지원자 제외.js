@@ -6,6 +6,7 @@ const result = []
 ls.sort();
 ls.unshift(-1)
 ls.push(-1)
+// [-1, 2, 3, 3, 4, 6, -1]
 
 for (let i = 1; i < ls.length - 1; i++) {
     const prev = ls[i - 1];
