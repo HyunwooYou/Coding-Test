@@ -9,6 +9,6 @@ def solution(x):
     if x % sum == 0:
         answer = True
     else:
-        answer= False
+        answer = False
 
     return answer

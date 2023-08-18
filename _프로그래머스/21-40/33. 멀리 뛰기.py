@@ -4,6 +4,7 @@ https://school.programmers.co.kr/learn/courses/30/lessons/12914
 """
 import math
 
+
 def solution(n):
     answer = 0
     d = [0] * (n + 1)
@@ -17,6 +18,7 @@ def solution(n):
 
     answer += 1
     return answer % 1234567
+
 
 def factorial(d, num):
     if d[num] == 0:

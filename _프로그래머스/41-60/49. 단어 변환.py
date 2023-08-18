@@ -8,6 +8,7 @@ https://school.programmers.co.kr/learn/courses/30/lessons/43163
 import heapq
 from collections import defaultdict, deque
 
+
 def dijkstra(dict_graph, start):
     INF = int(1e9)
     queue = []
@@ -39,6 +40,7 @@ def dijkstra(dict_graph, start):
 
     return dict_distance
 
+
 def is_adjacent_node(cur_node, compare_node):
     count = 0
     node_len = len(cur_node)
@@ -51,6 +53,7 @@ def is_adjacent_node(cur_node, compare_node):
         return True
     else:
         return False
+
 
 def solution(begin, target, words):
     answer = 0
@@ -73,6 +76,7 @@ def solution(begin, target, words):
     answer = distance_infos[target]
 
     return answer
+
 
 begin = 'hit'
 target = 'cog'

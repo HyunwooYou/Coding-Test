@@ -2,6 +2,8 @@
 * Title: 2016년
 https://school.programmers.co.kr/learn/courses/30/lessons/12901
 """
+
+
 def solution(a, b):
     days = 0
 
@@ -10,6 +12,7 @@ def solution(a, b):
     days += b
 
     return map_to_str((days - 1) % 7)
+
 
 def month_count(key):
     return {
@@ -26,6 +29,7 @@ def month_count(key):
         11: '30',
         12: '31',
     }.get(key, -1)
+
 
 def map_to_str(index):
     return {

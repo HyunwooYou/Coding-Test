@@ -2,6 +2,8 @@
 * Title: 실패율
 https://school.programmers.co.kr/learn/courses/30/lessons/42889
 """
+
+
 def solution(N, stages):
     ls = [0] * (N + 2)
     ans = []
@@ -24,6 +26,7 @@ def solution(N, stages):
     ans3 = list(map(lambda x: x[0], ans2))
 
     return ans3
+
 
 N = 5
 stages = [2, 1, 2, 6, 2, 4, 3, 3]

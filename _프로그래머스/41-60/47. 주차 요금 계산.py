@@ -5,12 +5,14 @@ https://school.programmers.co.kr/learn/courses/30/lessons/92341
 import math
 from collections import defaultdict
 
+
 def get_int_time(str_time):
     splitted = str_time.split(':')
     hours = int(splitted[0]) * 60
     minutes = int(splitted[1])
 
     return hours + minutes
+
 
 def solution(fees, records):
     dict = defaultdict(list)
@@ -61,6 +63,7 @@ def solution(fees, records):
     mapped_ls = list(map(lambda x: x[1][0], sorted_ls))
 
     return mapped_ls
+
 
 fees = [180, 5000, 10, 600]
 records = [

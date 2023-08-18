@@ -7,5 +7,4 @@ def solution(n):
             sum += i
             answer = sum
 
-
     return answer

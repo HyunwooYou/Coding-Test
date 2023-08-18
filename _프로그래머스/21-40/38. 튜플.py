@@ -2,8 +2,10 @@
 * Title: 튜플
 https://school.programmers.co.kr/learn/courses/30/lessons/64065
 """
+
+
 def solution(s):
-    sliced_s = s[2 : len(s) - 2]
+    sliced_s = s[2: len(s) - 2]
     splitted_s = sliced_s.split('},{')
     ls = []
     answer = []
@@ -26,4 +28,4 @@ def solution(s):
                 cur.remove(answer[j])
             answer.append(cur[0])
 
-    return answer  
+    return answer

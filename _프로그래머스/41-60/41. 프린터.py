@@ -2,6 +2,8 @@
 * Title: 프린터
 https://school.programmers.co.kr/learn/courses/30/lessons/42587
 """
+
+
 def solution(priorities, location):
     ls = []
     ans = []
@@ -32,10 +34,10 @@ def solution(priorities, location):
 
     return ans2
 
+
 # priorities = [2, 1, 3, 2]
 # location = 2
 priorities = [1, 1, 9, 1, 1, 1]
 location = 0
 
 print(solution(priorities, location))
-

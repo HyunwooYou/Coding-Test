@@ -4,6 +4,7 @@ https://school.programmers.co.kr/learn/courses/30/lessons/43162
 """
 from collections import deque
 
+
 def bfs(graph, start, visited):
     q = deque([start])
     visited[start] = True
@@ -14,6 +15,7 @@ def bfs(graph, start, visited):
             if not visited[i]:
                 q.append(i)
                 visited[i] = True
+
 
 def solution(n, computers):
     answer = 0
@@ -36,6 +38,7 @@ def solution(n, computers):
         answer += 1
 
     return answer
+
 
 n = 3
 computers = [[1, 1, 0], [1, 1, 0], [0, 0, 1]]

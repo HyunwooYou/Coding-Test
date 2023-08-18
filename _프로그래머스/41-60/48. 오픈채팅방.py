@@ -4,6 +4,7 @@ https://school.programmers.co.kr/learn/courses/30/lessons/42888
 """
 from collections import defaultdict
 
+
 def solution(record):
     ans = []
     dict_users = defaultdict(str)
@@ -23,12 +24,13 @@ def solution(record):
 
     for i in range(len(ans)):
         cur = ans[i]
-        dynamic = ('나갔', '들어왔') [cur[1] == 'Enter']
-        msg = '님이 ' + dynamic  + '습니다.'
+        dynamic = ('나갔', '들어왔')[cur[1] == 'Enter']
+        msg = '님이 ' + dynamic + '습니다.'
         ans[i] = dict_users[cur[0]] + msg
 
     return ans
 
-record = ["Enter uid1234 Muzi", "Enter uid4567 Prodo","Leave uid1234","Enter uid1234 Prodo","Change uid4567 Ryan"]
+
+record = ["Enter uid1234 Muzi", "Enter uid4567 Prodo", "Leave uid1234", "Enter uid1234 Prodo", "Change uid4567 Ryan"]
 
 print(solution(record))

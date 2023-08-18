@@ -11,4 +11,3 @@ def solution(num):
             num = num * 3 + 1
 
     return answer
-

@@ -6,6 +6,7 @@
 """
 from collections import deque
 
+
 # BFS 메서드 정의
 def bfs(graph, start, visited):
     # 큐(Queue), 구현을 위해 deque 라이브러리 사용
@@ -21,6 +22,7 @@ def bfs(graph, start, visited):
             if not visited[i]:
                 q.append(i)
                 visited[i] = True
+
 
 # 각 노드가 연결된 정보를 리스트 자료형으로 표현(2차원 리스트)
 graph = [
@@ -40,4 +42,3 @@ visited = [False] * 9
 
 # 정의된 BFS 함수 호출
 bfs(graph, 1, visited)
-

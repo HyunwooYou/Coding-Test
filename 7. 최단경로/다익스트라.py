@@ -48,6 +48,7 @@ for _ in range(m):
     # a번 노드에서 b번 노드로 가는 비용이 c라는 의미
     graph[a].append((b, c))
 
+
 def dijkstra(start):
     q = []
     # 시작 노드로 가기 위한 최단 경로는 0으로 설정하여, 큐에 삽입
@@ -67,6 +68,7 @@ def dijkstra(start):
             if cost < distance[i[0]]:
                 distance[i[0]] = cost
                 heapq.heappush(q, (i[0], cost))
+
 
 # 다익스트라 알고리즘을 수행
 dijkstra(start)

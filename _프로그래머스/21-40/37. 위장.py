@@ -4,6 +4,8 @@ https://school.programmers.co.kr/learn/courses/30/lessons/42578
 """
 from collections import defaultdict
 from functools import reduce
+
+
 def solution(clothes):
     dict = defaultdict(set)
     answer = []
@@ -19,4 +21,4 @@ def solution(clothes):
         answer.append(type_count + 1)
 
     # exclude all empty case
-    return reduce(lambda x, y : x * y, answer) - 1
+    return reduce(lambda x, y: x * y, answer) - 1

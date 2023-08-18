@@ -36,7 +36,7 @@ end = max(array)
 
 # 이진 탐색 수행(반복적)
 result = 0
-while(start <= end):
+while (start <= end):
     total = 0
     mid = (start + end) // 2
     for x in array:
@@ -53,5 +53,3 @@ while(start <= end):
 
 # 정답 출력
 print(result)
-
-

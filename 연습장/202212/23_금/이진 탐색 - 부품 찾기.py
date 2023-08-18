@@ -26,6 +26,8 @@ M = 3 [5, 7, 9]
 - 첫째 줄에 공백으로 구분하여 각 부품이 존재하면 yes를, 없으면 no를 출력한다.
 no yes yes
 """
+
+
 # 이진 탐색 소스코드 구현(반복문)
 def binary_search(array, target, start, end):
     while start <= end:
@@ -40,6 +42,7 @@ def binary_search(array, target, start, end):
         else:
             start = mid + 1
     return None
+
 
 # N(가게의 부품 개수) 입력
 n = int(input())

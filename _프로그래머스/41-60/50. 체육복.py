@@ -3,6 +3,7 @@
 https://school.programmers.co.kr/learn/courses/30/lessons/42862
 """
 
+
 def solution(n, lost, reserve):
     ls = [1] * (n + 2)
 
@@ -32,6 +33,7 @@ def solution(n, lost, reserve):
             ans += 1
 
     return ans
+
 
 # n = 5
 # lost = [2, 4]

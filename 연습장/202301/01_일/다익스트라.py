@@ -44,6 +44,7 @@ for _ in range(m):
     a, b, c = map(int, input().split())
     graph[a].append((b, c))
 
+
 def dijkstra(start):
     q = []
     heapq.heappush(q, (0, start))
@@ -63,6 +64,7 @@ def dijkstra(start):
                 distance[i[0]] = cost
                 heapq.heappush(q, (cost, i[0]))
 
+
 # 다익스트라 알고리즘을 수행
 dijkstra(start)
 
@@ -74,4 +76,3 @@ for i in range(1, n + 1):
     # 도달할 수 있는 경우 거리를 출력
     else:
         print(distance[i])
-

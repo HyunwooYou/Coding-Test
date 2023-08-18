@@ -2,6 +2,8 @@
 * Title: 숫자 문자열과 영단어
 https://school.programmers.co.kr/learn/courses/30/lessons/81301
 """
+
+
 def solution(s):
     answer = []
     ls = list(s)
@@ -15,11 +17,12 @@ def solution(s):
             tmp = ''
         else:
             tmp += ls[i]
-        
+
         cur_tmp = str_to_num(tmp)
         if cur_tmp != -1:
             answer.append(cur_tmp)
             tmp = ''
+
 
 def str_to_num(key):
     return {

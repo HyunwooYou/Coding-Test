@@ -2,6 +2,8 @@
 * Title: N개의 최소공배수
 https://school.programmers.co.kr/learn/courses/30/lessons/12953
 """
+
+
 def solution(arr):
     lcm = arr[0]
 
@@ -10,10 +12,12 @@ def solution(arr):
 
     return lcm
 
+
 def greatest_common_divisor(x, y):
-    while(y):
+    while (y):
         x, y = y, x % y
     return x
+
 
 def least_common_multiple(x, y):
     return (x * y) // greatest_common_divisor(x, y)

@@ -2,6 +2,8 @@
 * Title: 이중우선순위큐
 https://school.programmers.co.kr/learn/courses/30/lessons/42628
 """
+
+
 def solution(operations):
     ls = []
 
@@ -23,6 +25,7 @@ def solution(operations):
         min_val = max(ls)
         max_val = min(ls)
         return [min_val, max_val]
+
 
 # operations = ["I 16", "I -5643", "D -1", "D 1", "D 1", "I 123", "D -1"]
 operations = ["I -45", "I 653", "D 1", "I -642", "I 45", "I 97", "D 1", "D -1", "I 333"]

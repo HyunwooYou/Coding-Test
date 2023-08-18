@@ -2,6 +2,8 @@
 * Title: 약수의 합
 https://school.programmers.co.kr/learn/courses/30/lessons/12928
 """
+
+
 def solution(n):
     answer = 0
     sum = 0
