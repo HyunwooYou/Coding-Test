@@ -3,9 +3,9 @@
 https://school.programmers.co.kr/learn/courses/30/lessons/12932
 */
 const solution = (num) => {
-  const ls = Array.from(String(num), Number)
-  ls.reverse();
-  return ls;
+    const ls = Array.from(String(num), Number)
+    ls.reverse();
+    return ls;
 }
 
 // [5, 4, 3, 2, 1]

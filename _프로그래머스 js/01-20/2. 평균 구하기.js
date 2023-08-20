@@ -3,10 +3,10 @@
  https://school.programmers.co.kr/learn/courses/30/lessons/12944
  */
 const solution = (array) => {
-  const sum = array.reduce((a, b) => a + b, 0);
-  const count = array.length
-
-  return sum / count;
+    const sum = array.reduce((a, b) => a + b, 0);
+    const count = array.length
+    
+    return sum / count;
 }
 
 // 4
