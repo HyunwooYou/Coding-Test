@@ -7,9 +7,9 @@ const originVal = calc(n / m);
 let count = 0;
 
 while (true) {
-    count += 1;
-    const curVal = calc((n + count) / (m + count));
-    if (originVal !== curVal) break;
+  count += 1;
+  const curVal = calc((n + count) / (m + count));
+  if (originVal !== curVal) break;
 }
 
 console.log(count);
