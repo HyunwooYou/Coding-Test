@@ -3,7 +3,7 @@
 https://school.programmers.co.kr/learn/courses/30/lessons/12947
 */
 
-const solution = (x) => {
+function solution(x) {
   const arr = Array.from(String(x), Number);
   const sum = arr.reduce((a, b) => a + b, 0);
   let answer = true;
@@ -13,7 +13,7 @@ const solution = (x) => {
   }
 
   return answer;
-};
+}
 
 // true
 console.log(solution(10));

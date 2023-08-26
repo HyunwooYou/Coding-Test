@@ -2,7 +2,7 @@
 * Title: JadenCase 문자열 만들기
 https://school.programmers.co.kr/learn/courses/30/lessons/12951
 */
-const solution = (s) => {
+function solution(s) {
   s = s.split(' ');
   let ls = [];
 
@@ -27,7 +27,7 @@ const solution = (s) => {
   }
 
   return ls.join(' ');
-};
+}
 
 // "3people Unfollowed Me"
 console.log(solution('3people unFollowed me'));

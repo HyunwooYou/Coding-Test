@@ -2,7 +2,7 @@
 * Title: 문자열 다루기 기본
 https://school.programmers.co.kr/learn/courses/30/lessons/12918
 */
-const solution = (s) => {
+function solution(s) {
   const strls = Array.from(s);
   const len = strls.length;
   let answer = true;
@@ -19,7 +19,7 @@ const solution = (s) => {
   }
 
   return answer;
-};
+}
 
 // false
 console.log(solution('a234'));

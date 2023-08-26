@@ -2,11 +2,11 @@
 * Title: 서울에서 김서방 찾기
 https://school.programmers.co.kr/learn/courses/30/lessons/12919
 */
-const solution = (array) => {
+function solution(array) {
   const index = array.findIndex((str) => str === 'Kim');
 
   return `김서방은 ${index}에 있다`;
-};
+}
 
 // "김서방은 1에 있다"
 console.log(solution(['Jane', 'Kim']));

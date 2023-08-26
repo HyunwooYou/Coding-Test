@@ -2,7 +2,7 @@
 * Title: 가운데 글자 가져오기
 https://school.programmers.co.kr/learn/courses/30/lessons/12903
 */
-const solution = (s) => {
+function solution(s) {
   let answer = '';
   const len = s.length;
 
@@ -13,7 +13,7 @@ const solution = (s) => {
   }
 
   return answer;
-};
+}
 
 // "c"
 console.log(solution('abcde'));

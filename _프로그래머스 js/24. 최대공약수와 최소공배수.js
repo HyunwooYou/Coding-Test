@@ -2,7 +2,7 @@
 * Title: 최대공약수와 최소공배수
 https://school.programmers.co.kr/learn/courses/30/lessons/12940
 */
-const solution = (n, m) => {
+function solution(n, m) {
   const greatest_common_divisor = (x, y) => {
     let _x = x;
     let _y = y;
@@ -25,7 +25,7 @@ const solution = (n, m) => {
   const num_2 = least_common_multiple(n, m);
 
   return [num_1, num_2];
-};
+}
 
 // [3, 12]
 console.log(solution(3, 12));

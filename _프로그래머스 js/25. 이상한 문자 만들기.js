@@ -2,7 +2,7 @@
 * Title: 이상한 문자 만들기
 https://school.programmers.co.kr/learn/courses/30/lessons/12930
 */
-const solution = (s) => {
+function solution(s) {
   let answer = [];
   const split_s = s.split(' ');
 
@@ -24,7 +24,7 @@ const solution = (s) => {
   }
 
   return answer.join(' ');
-};
+}
 
 // "TrY HeLlO WoRlD"
 console.log(solution('try hello world'));

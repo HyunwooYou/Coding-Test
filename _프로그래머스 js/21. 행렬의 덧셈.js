@@ -2,7 +2,7 @@
 * Title: 행렬의 덧셈
 https://school.programmers.co.kr/learn/courses/30/lessons/12950
 */
-const solution = (arr1, arr2) => {
+function solution(arr1, arr2) {
   const row_len = arr1.length;
   const col_len = arr1[0].length;
   const ls = [];
@@ -18,7 +18,7 @@ const solution = (arr1, arr2) => {
   }
 
   return ls;
-};
+}
 
 // [[4,6],[7,9]]
 console.log(

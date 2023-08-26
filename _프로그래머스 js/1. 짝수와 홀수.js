@@ -2,7 +2,7 @@
  * Title: 짝수와 홀수
  https://school.programmers.co.kr/learn/courses/30/lessons/12937
  */
-const solution = (num) => {
+function solution(num) {
   let answer = '';
 
   if (num % 2 === 0) {
@@ -11,7 +11,7 @@ const solution = (num) => {
     answer = 'Odd';
   }
   return answer;
-};
+}
 
 // Even
 console.log(solution(10));

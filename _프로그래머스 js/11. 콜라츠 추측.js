@@ -2,7 +2,7 @@
 * Title: 콜라츠 추측
 https://school.programmers.co.kr/learn/courses/30/lessons/12943
 */
-const solution = (num) => {
+function solution(num) {
   let val = 0;
   let answer = 0;
 
@@ -24,7 +24,7 @@ const solution = (num) => {
   }
 
   return answer;
-};
+}
 
 console.log(solution(6));
 console.log(solution(16));

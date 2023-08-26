@@ -2,7 +2,7 @@
 * Title: 시저 암호
 https://school.programmers.co.kr/learn/courses/30/lessons/12926
 */
-const solution = (s, n) => {
+function solution(s, n) {
   let ls = [];
 
   const ord = (str) => str.charCodeAt(0);
@@ -39,7 +39,7 @@ const solution = (s, n) => {
   }
 
   return ls.join('');
-};
+}
 
 // "BC"
 console.log(solution('AB', 1));

@@ -2,7 +2,7 @@
 * Title: 정수 제곱근 판별
 https://school.programmers.co.kr/learn/courses/30/lessons/12934
 */
-const solution = (num) => {
+function solution(num) {
   let answer = 0;
   const sqrt = Math.sqrt(num);
 
@@ -13,7 +13,7 @@ const solution = (num) => {
   }
 
   return answer;
-};
+}
 
 // 144
 console.log(solution(121));
