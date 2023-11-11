@@ -1,11 +1,11 @@
 function solution(A, B) {
-  A.sort((a, b) => a - b);
-  B.sort((a, b) => b - a);
+    A.sort((a, b) => a - b);
+    B.sort((a, b) => b - a);
 
-  const multipliedLs = A.map((el, idx) => el * B[idx]);
-  const sumOfLs = multipliedLs.reduce((acc, cur) => acc + cur, 0);
+    const multipliedLs = A.map((el, idx) => el * B[idx]);
+    const sumOfLs = multipliedLs.reduce((acc, cur) => acc + cur, 0);
 
-  return sumOfLs;
+    return sumOfLs;
 }
 
 A = [1, 4, 2];
