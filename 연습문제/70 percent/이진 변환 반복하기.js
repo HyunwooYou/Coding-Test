@@ -4,7 +4,7 @@ console.log(`${s}\t${newStr}\t${len}`);
 
 #이진 변환
 const len = 10
-const trans = len.toString(2); 
+const trans = len.toString(2);
  */
 
 function solution(s) {

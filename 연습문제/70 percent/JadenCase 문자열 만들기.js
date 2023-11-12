@@ -1,9 +1,14 @@
+/*
+#lambda:map 앞자리 문자를 대문자로
+const capitalizeFirstLetter = (str) => str.charAt(0).toUpperCase() + str.slice(1);
+ */
 function solution(s) {
-  const step1 = s.toLowerCase();
-  const step2 = (str) => str.charAt(0).toUpperCase() + str.slice(1);
-  const ls = step1.split(' ').map(step2);
+    const loweredStr = s.toLowerCase();
+    const capitalizeFirstLetter = (str) =>
+        str.charAt(0).toUpperCase() + str.slice(1);
+    const ls = loweredStr.split(' ').map(capitalizeFirstLetter);
 
-  return ls.join(' ');
+    return ls.join(' ');
 }
 
 s = '3people unFollowed me';
