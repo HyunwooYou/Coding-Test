@@ -1,7 +1,7 @@
 /*
-* Title: 피보나치 수
-https://school.programmers.co.kr/learn/courses/30/lessons/12945
-*/
+#배열 0으로 초기화 #array 0으로 초기화
+const ls = new Array(10).fill(0);
+ */
 function solution(n) {
     let ls = [0, 1];
 
@@ -13,6 +13,5 @@ function solution(n) {
     return ls.pop();
 }
 
-// 5
-console.log(solution(5));
-// 55
+n = 1500;
+console.log(solution(n));

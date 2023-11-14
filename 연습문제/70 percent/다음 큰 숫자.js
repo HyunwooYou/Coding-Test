@@ -1,3 +1,6 @@
+/*
+
+ */
 function solution(n) {
     const getOneCnt = (num) => {
         const convertToBinary = num.toString(2);
