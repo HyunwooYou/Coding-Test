@@ -5,6 +5,10 @@ console.log(`${s}\t${newStr}\t${len}`);
 #이진 변환
 const len = 10
 const trans = len.toString(2);
+
+#특정문자열 개수
+const s = '101100';
+const cnt = s.sp;lit('').filter((e) => e === '0').length;
  */
 
 function solution(s) {
