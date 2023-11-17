@@ -9,6 +9,9 @@ const trans = len.toString(2);
 #특정문자열 개수
 const s = '101100';
 const cnt = s.sp;lit('').filter((e) => e === '0').length;
+
+#replace 정규식 #정규식
+const newS = s.replace(/0/g, '');
  */
 
 function solution(s) {
