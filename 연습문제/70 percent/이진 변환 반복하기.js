@@ -1,16 +1,16 @@
 /*
-#console #가지런히 #일정하게 출력
+#console 가지런히 출력
 console.log(`${s}\t${newStr}\t${len}`);
 
-#이진 변환
+#toString #convert #binary 10진수를 2진수로 변경
 const len = 10
 const trans = len.toString(2);
 
-#특정문자열 개수
+#list 특정 문자열 개수
 const s = '101100';
 const cnt = s.sp;lit('').filter((e) => e === '0').length;
 
-#replace 정규식 #정규식
+#list replace 정규식
 const newS = s.replace(/0/g, '');
  */
 

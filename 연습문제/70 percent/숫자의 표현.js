@@ -1,5 +1,5 @@
 /*
-#소수점내림
+#math 소수점 내림
 Math.floor(7.8)
  */
 function solution(n) {

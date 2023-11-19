@@ -1,5 +1,5 @@
 /*
-#배열 0으로 초기화 #array 0으로 초기화
+#list 0으로 초기화 #array 0으로 초기화
 const ls = new Array(10).fill(0);
  */
 function solution(n) {

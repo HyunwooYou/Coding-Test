@@ -1,5 +1,5 @@
 /*
-#pop()
+#stack pop 활용법
 const stack = []
 stack.pop() / stack[-1] => undefeind 값으로 보여짐
  */

@@ -1,5 +1,5 @@
 /*
-#charAt #lambda:map 앞자리 문자를 대문자로
+#list lambda 식을 활용해서 앞자리 문자를 대문자로 변경
 str.charAt(0).toUpperCase() + str.slice(1);
  */
 function solution(s) {
