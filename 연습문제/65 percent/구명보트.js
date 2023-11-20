@@ -11,23 +11,20 @@ ls.shift();
 ls.slice(1);
  */
 function solution(people, limit) {
-    people.sort((a, b) => a - b); // 무게 순으로 정렬
     let left = 0;
     let right = people.length - 1;
     let boats = 0;
 
     while (left <= right) {
         if (people[left] + people[right] <= limit) {
-            left++; // 가장 가벼운 사람과 무거운 사람이 함께 탈 수 있으면 함께 보내기
+            left++;
         }
-        right--; // 무거운 사람은 항상 보낸다
-
-        boats++; // 보트 개수 증가
+        right--;
+        boats++;
     }
 
     return boats;
 }
-
 people = [70, 50, 80, 50, 20];
 // people = [70, 50, 80];
 limit = 100;
