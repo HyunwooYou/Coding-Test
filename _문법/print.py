@@ -14,3 +14,8 @@ input_data = sys.stdin.readline().rstrip()
 
 # 입력받은 문자열 그대로 출력
 print(input_data)
+
+ls = [1, 2, 3, 4]
+
+print(*ls, sep=' ')
+print(' '.join(map(str, ls)))
