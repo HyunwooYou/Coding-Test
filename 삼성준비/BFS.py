@@ -17,9 +17,10 @@ from collections import deque
 n = int(input())
 start = int(input())
 
-graph = [[]]
+graph = []
 visited = [False] * (n + 1)
 
+graph.append([])
 for _ in range(n):
   graph.append(list(map(int, input().split())))
 
