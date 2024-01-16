@@ -5,7 +5,7 @@ dx = (-1, 0, 1, 0)
 dy = (0, 1, 0, -1)
 
 def init_grid():
-  y = x = int(N / 2)
+  x = y = int(N / 2)
   direction = move_count = number = 0
   dist = 1
 
@@ -29,7 +29,6 @@ def init_grid():
       move_count = 0
 
     direction = (direction + 1) % 4
-
 
 init_grid()
 
