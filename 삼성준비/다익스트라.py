@@ -1,10 +1,32 @@
+"""
+6 11
+1
+1 2 2
+1 3 5
+1 4 1
+2 3 3
+2 4 2
+3 2 3
+3 6 5
+4 3 3
+4 5 1
+5 3 1
+5 6 2
+
+0
+2
+3
+1
+2
+4
+"""
 import heapq
 
 INF = int(1e9)
 
 n, m = map(int, input().split())
 start = int(input())
-graph = [[] for i in range(n + 1)]
+graph = [[] for _ in range(n + 1)]
 distance = [INF] * (n + 1)
 
 for _ in range(m):
@@ -24,7 +46,6 @@ def dijkstra(start):
 
     for adj, adj_dist in graph[cur]:
       new_dist = cur_dist + adj_dist
-
       if new_dist < distance[adj]:
         distance[adj] = new_dist
         heapq.heappush(q, (adj, new_dist))
