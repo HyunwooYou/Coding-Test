@@ -42,11 +42,14 @@ def bfs(x, y, d):
       ny = y + dy[d]
 
       if 0 <= nx < n and 0 <= ny < m:
-        if not visited[nx][ny] and graph[nx][ny] == 0:
+        if graph[nx][ny] == 0 and not visited[nx][ny]:
           q.append((nx, ny))
           visited[nx][ny] = True
-          cnt += 1
           back_step = False
+          cnt += 1
+
+          x = nx
+          y = ny
           break
 
     if back_step:
