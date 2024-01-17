@@ -16,7 +16,6 @@ from collections import deque
 
 n = int(input())
 start = int(input())
-
 graph = []
 visited = [False] * (n + 1)
 

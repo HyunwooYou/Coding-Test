@@ -10,14 +10,11 @@ import sys
 
 input_data = sys.stdin.readline().rstrip()
 
-print(input_data)
-
 ls = [1, 2, 3, 4]
 
-print(' '.join(map(str, ls)))
 print(*ls, sep=' ')
+print(' '.join(map(str, ls)))
+param1 = 'param-1'
+param2 = 'param-2'
 
-a = 'param-1'
-b = 'param-2'
-
-print(f"{a} : {b}")
+print(f"{param1} : {param2}")

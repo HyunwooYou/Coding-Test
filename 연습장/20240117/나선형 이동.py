@@ -22,7 +22,8 @@ def init_grid():
       number += 1
       board[nx][ny] = number
 
-      x, y = nx, ny
+      x = nx
+      y = ny
 
     if move_count == 2:
       dist += 1
@@ -34,3 +35,4 @@ init_grid()
 
 for row in board:
   print(row)
+

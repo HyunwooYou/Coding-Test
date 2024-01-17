@@ -27,17 +27,17 @@ def bfs(x, y):
   q.append((x, y))
 
   while q:
-    x, y = q.popleft()
+    sx, sy = q.popleft()
 
     for d in range(4):
-      nx = x + dx[d]
-      ny = y + dy[d]
+      nx = sx + dx[d]
+      ny = sy + dy[d]
 
       if out_of_range(nx, ny) or graph[nx][ny] == 0:
         continue
 
       if graph[nx][ny] == 1:
-        graph[nx][ny] = graph[x][y] + 1
+        graph[nx][ny] = graph[sx][sy] + 1
         q.append((nx, ny))
 
   return graph[n - 1][m - 1]

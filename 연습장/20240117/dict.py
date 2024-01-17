@@ -12,5 +12,5 @@ dict['c'].add(('c_name', 20))
 print(list(dict.get('a'))[0][0])
 
 for i in dict.items():
-    cur = list(i[1])
-    print(cur)
+  cur = list(i[1])
+  print(cur)

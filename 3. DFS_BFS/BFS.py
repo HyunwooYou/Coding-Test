@@ -15,6 +15,7 @@ def bfs(graph, cur_node, visited):
         # 큐에서 하나의 원소를 뽑아 출력
         cur_node = queue.popleft()
         print(cur_node, end=' ')
+
         # 해당 원소와 연결된, 아직 방문하지 않은 원소들을 큐에 삽입
         for adj_node in graph[cur_node]:
             if not visited[adj_node]:

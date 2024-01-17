@@ -2,18 +2,24 @@ from collections import deque
 
 M = 3
 ls = [1, 2, 3, 4]
+visited = [False] * len(ls)
+result = []
 
-def dfs(comb: deque, depth: int):
-  if len(comb) == M:
-    print(comb)
+def dfs(perm: deque):
+  if len(perm) == M:
+    result.append(list(perm))
+    print(perm)
     return
-  elif len(ls) == depth:
-    return
 
-  comb.append(ls[depth])
-  dfs(comb, depth + 1)
+  for i, val in enumerate(ls):
+    if visited[i]:
+      continue
 
-  comb.pop()
-  dfs(comb, depth + 1)
+    perm.append(val)
+    visited[i] = True
+    dfs(perm)
 
-dfs(deque(), 0)
+    perm.pop()
+    visited[i] = False
+
+dfs(deque())
