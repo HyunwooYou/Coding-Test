@@ -1,16 +1,11 @@
-import time
 from collections import deque
 
-start = time.time()
-
-M = 5
-ls = list(range(1, 40))
-answer = []
+M = 3
+ls = [1, 2, 3, 4]
 
 def dfs(comb: deque, depth: int):
   if len(comb) == M:
-    # print(comb)
-    answer.append(list(comb))
+    print(comb)
     return
   elif len(ls) == depth:
     return
@@ -22,7 +17,3 @@ def dfs(comb: deque, depth: int):
   dfs(comb, depth + 1)
 
 dfs(deque(), 0)
-
-print(answer)
-
-print(time.time() - start)
