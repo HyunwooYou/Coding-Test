@@ -1,7 +1,10 @@
+import time
 from collections import deque
 
-M = 3
-ls = [1, 2, 3, 4]
+start = time.time()
+
+M = 6
+ls = list(range(1, 40))
 
 def dfs(comb: deque, depth: int):
   if len(comb) == M:
@@ -17,3 +20,5 @@ def dfs(comb: deque, depth: int):
   dfs(comb, depth + 1)
 
 dfs(deque(), 0)
+
+print(time.time() - start)
