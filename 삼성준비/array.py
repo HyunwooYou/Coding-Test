@@ -18,11 +18,3 @@ last = num_ls[-1]
 
 print(last)
 
-# 2진수 출력
-num = 5
-for iv in range(2 ** num):
-  binary_str = format(iv, f'0{iv}b')
-  print(binary_str)
-
-
-
