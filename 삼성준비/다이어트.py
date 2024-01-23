@@ -11,44 +11,39 @@
 134
 2 4 6
 '''
-from sys import stdin
+import time
 from itertools import combinations
 
-input = stdin.readline
-
 n = int(input())
-mp, mf, ms, mv = map(int, input().split())
+target = list(map(int, input().split()))
+info_ls = []
 
-board = [[]]
-for _ in range(n):
-  p, f, s, v, c = map(int, input().split())
-  board.append((p, f, s, v, c))
+for i in range(1, n + 1):
+  ls = list(map(int, input().split()))
+  ls.append(i)
+  info_ls.append(ls)
 
+min_cost = int(1e9)
+idx_ls = []
 
-def solv():
-  answer_c = 9875643210
-  answer = None
-  for cnt in range(1, n + 1):
-    for comb in combinations(range(1, n + 1), cnt):
-      tp = tf = ts = tv = tc = 0
-      for target in comb:
-        tp += board[target][0]
-        tf += board[target][1]
-        ts += board[target][2]
-        tv += board[target][3]
-        tc += board[target][4]
+start = time.time()
+for iv in range(1, n + 1):
+  for jv in combinations(info_ls, iv):
+    j_sum_ls = [sum(x) for x in zip(*jv)]
 
-      if tp >= mp and tf >= mf and ts >= ms and tv >= mv:
-        if answer_c > tc:
-          answer_c = tc
-          answer = comb
-        elif answer_c == tc:
-          answer = sorted((answer, comb))[0]
-  if answer_c == 9875643210:
-    print(-1)
-  else:
-    print(answer_c)
-    print(*answer)
+    cond1 = target[0] <= j_sum_ls[0]
+    cond2 = target[1] <= j_sum_ls[1]
+    cond3 = target[2] <= j_sum_ls[2]
+    cond4 = target[3] <= j_sum_ls[3]
+
+    if cond1 and cond2 and cond3 and cond4:
+      if min_cost >= j_sum_ls[4]:
+        idx_ls = list(map(lambda x: x[5], jv))
+        min_cost = j_sum_ls[4]
 
 
-solv()
+print(min_cost)
+print(*sorted(idx_ls), end=' ')
+
+print()
+# print(time.time() - start)
