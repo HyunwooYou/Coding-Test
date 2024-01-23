@@ -4,71 +4,67 @@ from collections import defaultdict
 
 start = time.time()
 
-# bn = 8
-# cw = 26
-# box = [
-#   (17, 20),
-#   (6, 10),
-#   (4, 10),
-#   (2, 14),
-#   (2, 10),
-#   (8, 8),
-#   (10, 14),
-#   (14, 16),
-# ]
 
-bn = 4
-cw = 10
+bn = 8
+cw = 26
 box = [
-  (6, 10),
-  (4, 10),
-  (2, 14),
-  (2, 8)
+	(17, 20),
+	(6, 10),
+	(4, 10),
+	(14, 2),
+	(2, 10),
+	(8, 8),
+	(10, 14),
+	(14, 16),
 ]
 
-d = [[] for _ in range(101)]
+
+def binary_ls(num):
+    str_ls = []
+    for iv in range(2 ** num):
+        str_ls.append(format(iv, f'0{num}b'))
+    return str_ls
+
+
+def solution(bn, cw, box):
+    d = [0] * (100 + 1)
+
+    for iv in range(1, bn + 1):
+        # if dict.get(iv)
+        if dict[iv] != None:
+            dict[iv].extend(binary_ls(iv))
+
+        for jv in combinations(box, iv):
+            jv_ls = list(jv)
+
+            for kv in dict[iv]:
+                k_sum = 0
+                k_width = 0
+
+                for l, lv in enumerate(kv):
+                    if lv == '1':
+                        k_width += jv_ls[l][1]
+                    else:
+                        k_width += jv_ls[l][0]
+
+                    if k_width > cw:
+                        k_width = 0
+                        break
+
+                    k_sum += jv_ls[l][0] * jv_ls[l][1]
+
+                if k_width == 0:
+                    break
+
+                d[k_width] = max(d[k_width], k_sum)
+
+    for i, iv in enumerate(d):
+        if iv != 0:
+            print(f'{i} : {iv}')
+
+
 dict = defaultdict(list)
-key_ls = []
 
-for iv in box:
-  h = iv[0]
-  w = iv[1]
-  d[h].append(w)
-  d[w].append(h)
+solution(bn, cw, box)
 
-for i, iv in enumerate(d):
-  # set_ls = list(set(d[i]))
-  d[i] = sorted(d[i], reverse=True)
-
-for i, iv in enumerate(d):
-  if len(iv) == 0:
-    continue
-  dict[i].extend(iv)
-  key_ls.append(i)
-
-max_val = 0
-
-for jv in range(1, len(key_ls) + 1):
-  for kv in combinations(key_ls, jv):
-    total = 0
-    if sum(kv) != cw:
-      continue
-    print(kv)
-
-    for cv in kv:
-      total += dict[cv][0] * cv
-      max_val = max(max_val, total)
-
-print()
-# for iv in box:
-#   print(iv)
-# print()
-
-for i, iv in dict.items():
-  print(f'{i}: {iv}')
-print()
-
-print(f'max_val: {max_val}')
-
-print()
 print(time.time() - start)
