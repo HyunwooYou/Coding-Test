@@ -1,8 +1,4 @@
-import time
-from itertools import combinations
-from collections import defaultdict
-
-start = time.time()
+from collections import deque, defaultdict
 
 bn = 8
 cw = 26
@@ -18,52 +14,33 @@ box = [
 ]
 
 
-def binary_ls(num):
-  str_ls = []
-  for iv in range(2 ** num):
-    str_ls.append(format(iv, f'0{num}b'))
-  return str_ls
-
-
 def solution(bn, cw, box):
-  d = [0] * (100 + 1)
+  d = [0] * (cw + 1)
+  queue = deque([(0, 0, 0)])
 
-  for iv in range(1, bn + 1):
-    # if dict.get(iv)
-    if dict[iv] != None:
-      dict[iv].extend(binary_ls(iv))
+  while queue:
+    used, idx, sum_x = queue.popleft()
 
-    for jv in combinations(box, iv):
-      jv_ls = list(jv)
+    for i in range(idx, bn):
+      next_used = used | (1 << i)
+      queue.append((next_used, i + 1, sum_x))
 
-      for kv in dict[iv]:
-        k_sum = 0
-        k_width = 0
+      k_sum = sum_x
+      k_width = 0
+      for l in range(bn):
+        if (next_used >> l) & 1:
+          k_width += box[l][1]
+          k_sum += box[l][0] * box[l][1]
 
-        for l, lv in enumerate(kv):
-          if lv == '1':
-            k_width += jv_ls[l][1]
-          else:
-            k_width += jv_ls[l][0]
-
-          if k_width > cw:
-            k_width = 0
-            break
-
-          k_sum += jv_ls[l][0] * jv_ls[l][1]
-
-        if k_width == 0:
-          break
-
+      if k_width <= cw:
         d[k_width] = max(d[k_width], k_sum)
 
   for i, iv in enumerate(d):
     if iv != 0:
-      print(f'{i} : {iv}')
+      print(f'{i}: {iv}')
+  return d[cw]
 
 
-dict = defaultdict(list)
+result = solution(bn, cw, box)
 
-solution(bn, cw, box)
-
-print(time.time() - start)
+print(result)

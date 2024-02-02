@@ -9,41 +9,49 @@
 20 70 50 4 4
 
 134
-2 4 6
+1 3 5
 '''
-import time
-from itertools import combinations
+from collections import deque
 
 n = int(input())
-target = list(map(int, input().split()))
-info_ls = []
+mp, mf, ms, mv = list(map(int, input().split(' ')))
+diets = [list(map(int, input().split(' '))) for _ in range(n)]
 
-for i in range(1, n + 1):
-  ls = list(map(int, input().split()))
-  ls.append(i)
-  info_ls.append(ls)
-
-min_cost = int(1e9)
-idx_ls = []
-
-start = time.time()
-for iv in range(1, n + 1):
-  for jv in combinations(info_ls, iv):
-    j_sum_ls = [sum(x) for x in zip(*jv)]
-
-    cond1 = target[0] <= j_sum_ls[0]
-    cond2 = target[1] <= j_sum_ls[1]
-    cond3 = target[2] <= j_sum_ls[2]
-    cond4 = target[3] <= j_sum_ls[3]
-
-    if cond1 and cond2 and cond3 and cond4:
-      if min_cost >= j_sum_ls[4]:
-        idx_ls = list(map(lambda x: x[5], jv))
-        min_cost = j_sum_ls[4]
+cost_min = float('inf')
+costs = []
 
 
-print(min_cost)
-print(*sorted(idx_ls), end=' ')
+def bfs():
+  global cost_min, costs
+  q = deque([(0, [mp, mf, ms, mv], [])])
 
-print()
-# print(time.time() - start)
+  while q:
+    idx, remaining, path = q.popleft()
+    # print(f'q: {q}')
+
+    sum_x = sum([diets[i][4] for i in path])
+
+    if sum(remaining) == 0:
+      if sum_x < cost_min:
+        costs = path
+      cost_min = min(sum_x, cost_min)
+      continue
+
+    if len(path) == n:
+      continue
+
+    if sum_x > cost_min:
+      continue
+
+    for i in range(n):
+      if i not in path:
+        new_remaining = [max(0, y - x) for x, y in zip(diets[i], remaining)]
+        new_path = path + [i]
+        q.append((i + 1, new_remaining, new_path))
+
+
+bfs()
+
+print(cost_min)
+for x in costs:
+  print(x, end=' ')
