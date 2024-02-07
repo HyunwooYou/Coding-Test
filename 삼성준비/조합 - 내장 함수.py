@@ -14,7 +14,11 @@ def get_combinations(n, r):
   result = list(combinations(range(n), r))
 
   precomputed_combinations[(n, r)] = result
-  return result
+  # return result
+  return combinations(range(n), r)
 
 # 예제 사용
-print(get_combinations(40, 5))
+# print(get_combinations(40, 5))
+print(precomputed_combinations)
+
+# print(combinations(range(40), 5))
