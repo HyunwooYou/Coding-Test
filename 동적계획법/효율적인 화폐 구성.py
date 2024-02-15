@@ -20,13 +20,15 @@ d[0] = 0
 
 # 다이나믹 프로그래밍
 for i in range(n):
-	for j in range(ls[i], m + 1):  # 금액
-		if d[j - ls[i]] != INF:  # 화폐 단위로 만들 수 있는 경우
+	# j : 금액
+	for j in range(ls[i], m + 1):
+		# 화폐 단위로 만들 수 있는 경우
+		if d[j - ls[i]] != INF:
 			d[j] = min(d[j], d[j - ls[i]] + 1)
 
-
-# 계산된 결과 출력
-if d[m] == INF:   # 최종적으로 M원을 만드는 방법이 없는 경우
+# 최종적으로 M원을 만드는 방법이 없는 경우
+if d[m] == INF:
 	print(-1)
+# 계산된 결과 출력
 else:
 	print(d[m])

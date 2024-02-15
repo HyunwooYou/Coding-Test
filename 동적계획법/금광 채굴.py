@@ -18,32 +18,32 @@ for tc in range(int(input())):
 	# 다이나믹 프로그래밍을 위한 2차원 DP 테이블 초기화
 	d = []
 	index = 0
-	for i in range(n):
+	for _ in range(n):
 		d.append(array[index:index + m])
 		index += m
 
 	# 다이나믹 프로그래밍 진행
-	for j in range(1, m):
-		for i in range(n):
+	for x in range(1, m):
+		for y in range(n):
 			# 왼쪽 위에서 오는 경우
-			if i == 0:
+			if y == 0:
 				left_up = 0
 			else:
-				left_up = d[i - 1][j - 1]
+				left_up = d[y - 1][x - 1]
 
 			# 왼쪽 아래에서 오는 경우
-			if i == n - 1:
+			if y == n - 1:
 				left_down = 0
 			else:
-				left_down = d[i + 1][j - 1]
+				left_down = d[y + 1][x - 1]
 
 			# 왼쪽에서 오는 경우
-			left = d[i][j - 1]
+			left = d[y][x - 1]
 
-			d[i][j] = d[i][j] + max(left_up, left_down, left)
+			d[y][x] = d[y][x] + max(left_up, left_down, left)
 
 	result = 0
-	for i in range(n):
-		result = max(result, d[i][m - 1])
+	for y in range(n):
+		result = max(result, d[y][m - 1])
 
 	print(result)

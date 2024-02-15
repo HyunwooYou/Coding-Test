@@ -11,47 +11,38 @@
 134
 1 3 5
 '''
-from collections import deque
-
 n = int(input())
 mp, mf, ms, mv = list(map(int, input().split(' ')))
 diets = [list(map(int, input().split(' '))) for _ in range(n)]
 
-cost_min = float('inf')
-costs = []
+# 최소 비용과 해당하는 식단들을 저장할 변수들
+min_cost = float('inf')
+min_path = []
 
+# 재귀적으로 모든 경우를 탐색하는 함수
+def find_min_cost(idx, remaining, path):
+  global min_cost, min_path
 
-def bfs():
-  global cost_min, costs
-  q = deque([(0, [mp, mf, ms, mv], [])])
+  # 모든 식재료에 대한 선택을 완료한 경우
+  if idx == n:
+    # 남은 식재료가 없는 경우
+    if all(ingredient == 0 for ingredient in remaining):
+      total_cost = sum(diets[i][4] for i in path)
+      if total_cost < min_cost:
+        min_cost = total_cost
+        min_path = path[:]
+    return
 
-  while q:
-    idx, remaining, path = q.popleft()
-    # print(f'q: {q}')
+  # 현재 식재료를 선택하지 않는 경우
+  find_min_cost(idx + 1, remaining, path)
 
-    sum_x = sum([diets[i][4] for i in path])
+  # 현재 식재료를 선택하는 경우
+  new_remaining = [max(0, remaining[i] - diets[idx][i]) for i in range(4)]
+  find_min_cost(idx + 1, new_remaining, path + [idx])
 
-    if sum(remaining) == 0:
-      if sum_x < cost_min:
-        costs = path
-      cost_min = min(sum_x, cost_min)
-      continue
+# 최소 비용을 찾기 위한 호출
+find_min_cost(0, [mp, mf, ms, mv], [])
 
-    if len(path) == n:
-      continue
-
-    if sum_x > cost_min:
-      continue
-
-    for i in range(n):
-      if i not in path:
-        new_remaining = [max(0, y - x) for x, y in zip(diets[i], remaining)]
-        new_path = path + [i]
-        q.append((i + 1, new_remaining, new_path))
-
-
-bfs()
-
-print(cost_min)
-for x in costs:
-  print(x, end=' ')
+# 결과 출력
+print(min_cost)
+print(*[idx + 1 for idx in min_path])
