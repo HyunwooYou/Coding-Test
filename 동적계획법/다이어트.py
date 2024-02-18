@@ -12,37 +12,38 @@
 2 4 6
 '''
 n = int(input())
-mp, mf, ms, mv = list(map(int, input().split(' ')))
-diets = [list(map(int, input().split(' '))) for _ in range(n)]
+mp, mf, ms, mv = list(map(int, input().split()))
+array = [list(map(int, input().split())) for _ in range(n)]
 
 # 최소 비용과 해당하는 식단들을 저장할 변수들
-min_cost = float('inf')
+min_cost = int(1e9)
 min_path = []
 
 # 재귀적으로 모든 경우를 탐색하는 함수
-def find_min_cost(idx, remaining, path):
+def dfs(index, remaining, path):
 	global min_cost, min_path
 
-	# 모든 식재료에 대한 선택을 완료한 경우
-	if idx == n:
-		# 남은 식재료가 없는 경우
-		if all(ingredient == 0 for ingredient in remaining):
-			total_cost = sum(diets[i][4] for i in path)
-			if total_cost < min_cost:
-				min_cost = total_cost
+	# 모든 식재료 선택을 완료한 경우
+	if index == n:
+		# 남은 식재료가 없는 경우 => 식재료 최소 조건을 만족함
+		if all(r == 0 for r in remaining):
+			new_cost = sum(array[i][4] for i in path)
+			if new_cost < min_cost:
+				min_cost = new_cost
 				min_path = path[:]
 		return
 
-	# 현재 식재료를 선택하지 않는 경우
-	find_min_cost(idx + 1, remaining, path)
+	# 선택 안 함
+	dfs(index + 1, remaining, path)
 
-	# 현재 식재료를 선택하는 경우
-	new_remaining = [max(0, remaining[i] - diets[idx][i]) for i in range(4)]
-	find_min_cost(idx + 1, new_remaining, path + [idx])
+	# 현재 식재료 선택
+	new_remaining = [max(0, remaining[i] - array[index][i]) for i in range(4)]
+	dfs(index + 1, new_remaining, path + [index])
+
 
 # 최소 비용을 찾기 위한 호출
-find_min_cost(0, [mp, mf, ms, mv], [])
+dfs(0, [mp, mf, ms, mv], [])
 
 # 결과 출력
 print(min_cost)
-print(*[idx + 1 for idx in min_path])
+print(*[i + 1 for i in min_path])
