@@ -4,9 +4,9 @@ https://school.programmers.co.kr/learn/courses/30/lessons/12935
 """
 
 
-def solution(array):
-    if (not (len(array) > 1)):
+def solution(ls):
+    if (not (len(ls) > 1)):
         return [-1]
-    array.pop(array.index(min(array)))
+    ls.pop(ls.index(min(ls)))
 
-    return array
+    return ls

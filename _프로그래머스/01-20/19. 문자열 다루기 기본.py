@@ -9,7 +9,7 @@ def solution(s):
 
     if not (length == 4 or length == 6):
         return False
-    if i in range(0, length):
+    for i in range(0, length):
         num = ord(s[i]) - 48
         if num >= 10:
             return False
